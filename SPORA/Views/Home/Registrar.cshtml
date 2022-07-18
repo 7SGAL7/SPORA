@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<h2>Registrar</h2>
+@{ 
+    if (ViewBag.Error != "-")
+    {
+    <div class="@ViewBag.Alert" role="alert">
+        @ViewBag.Error
+    </div>
+     }
+}
+<div data-parsley-validate class="form-horizontal form-label-left">
+
+    @using (Html.BeginForm("Registrar", "HOME", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        
+        <input class="form-control form-control-lg" type="file" id="formFile"  name="Imagen" accept="image/" required>
+        
+        
+        <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-6 label-align" for="Nombre">
+                Nombre <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+                <input type="text" id="Nombre" name="Nombre" class="form-control" required="required">
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-6 label-align" for="Apellido">
+                Apellido <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+                <input type="text" id="Apellido" name="Apellido" required="required" class="form-control">
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-6 label-align" for="Edad">
+                Edad <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+                <input type="number" id="Edad" name="Edad" required="required" class="form-control">
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-6 label-align" for="Correo">
+                Correo <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+                <input type="email" id="Correo" name="Correo" required="required" class="form-control">
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="col-form-label col-md-3 col-sm-6 label-align" for="Telefono">
+                Teléfono <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6">
+                <input type="number" id="Telefono" name="Telefono" required="required" class="form-control">
+            </div>
+        </div>
+
+        <div class="row item form-group">
+            <div class="col-md-6 col-sm-6">
+                <button type="submit" class="btn btn-success" id="btn-Registrar">Registrar</button>
+            </div>
+        </div>
+
+    }
+</div>
+

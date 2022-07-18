@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<section class="login_content" >
+    <form action="@Url.Content("~/Home/Login")" method="post">
+
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div style="border-radius: 50%; overflow:hidden; width: 100px; height: 100px; margin: auto">
+                <img src="@ViewBag.Image" style="width: 180px;" />
+            </div>
+        
+            <div style="margin: 30px auto;">
+                <input type="text" class="form-control" placeholder="Correo" name="email" value="@ViewBag.Correo"/>
+            </div>
+        
+            <div style="margin: auto;">
+                <input type="submit" value="Entrar" class="btn btn-success" />
+            </div>
+        </div>
+
+    </form>
+</section>
