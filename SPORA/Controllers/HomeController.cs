@@ -15,7 +15,7 @@ namespace SPORA.Controllers
         
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login", "Home");
         }
 
         
